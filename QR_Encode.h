@@ -5,6 +5,10 @@
  *      Author: swex
  */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <string.h>
 #include <stdlib.h>
 
@@ -45,9 +49,9 @@
 
 typedef struct tagRS_BLOCKINFO
 {
-	int ncRSBlock;		//RS block number
-	int ncAllCodeWord;	//The number of codewords in the block
-	int ncDataCodeWord;	//The number of data code words (the number of code words - the number of RS code word)
+    int ncRSBlock;		//RS block number
+    int ncAllCodeWord;	//The number of codewords in the block
+    int ncDataCodeWord;	//The number of data code words (the number of code words - the number of RS code word)
 
 } RS_BLOCKINFO, *LPRS_BLOCKINFO;
 
@@ -58,17 +62,17 @@ typedef struct tagRS_BLOCKINFO
 
 typedef struct tagQR_VERSIONINFO
 {
-	int nVersionNo;
-	int ncAllCodeWord;
+    int nVersionNo;
+    int ncAllCodeWord;
 
-	// Error correction levels (0 = L, 1 = M, 2 = Q, 3 = H)
-	int ncDataCodeWord[4];	// data len
+    // Error correction levels (0 = L, 1 = M, 2 = Q, 3 = H)
+    int ncDataCodeWord[4];	// data len
 
-	int ncAlignPoint;	// position
-	int nAlignPoint[6];	// numberof
+    int ncAlignPoint;	// position
+    int nAlignPoint[6];	// numberof
 
-	RS_BLOCKINFO RS_BlockInfo1[4]; // EC pos
-	RS_BLOCKINFO RS_BlockInfo2[4]; // EC pos
+    RS_BLOCKINFO RS_BlockInfo1[4]; // EC pos
+    RS_BLOCKINFO RS_BlockInfo2[4]; // EC pos
 
 } QR_VERSIONINFO, *LPQR_VERSIONINFO;
 
@@ -98,3 +102,7 @@ QR_m_data - массив для записи, пишет в биты.
 
 функция возвращает сторону квадрата.
 */
+
+#ifdef __cplusplus
+}
+#endif
